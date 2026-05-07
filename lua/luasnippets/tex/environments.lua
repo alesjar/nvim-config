@@ -20,12 +20,13 @@ return {
     fmta(
       [[
         \begin{figure}[h]
-          \includegraphics[scale=<>]{imagenes/<>}
+          \centering
+          \includegraphics[width=<>\lanewidth]{imagenes/<>}
           \label{fig:<>}
         \end{figure}
       ]],
       {
-        i(1, "0.25"),
+        i(1, "0.6"),
         i(2),
         rep(2),
       }
@@ -36,13 +37,14 @@ return {
     fmta(
       [[
         \begin{figure}[h]
-          \includegraphics[scale=<>]{imagenes/<>}
+          \centering
+          \includegraphics[width=<>\lanewidth]{imagenes/<>}
           \label{fig:<>}
           \caption{<>}
         \end{figure}
       ]],
       {
-        i(1, "0.25"),
+        i(1, "0.6"),
         i(2),
         rep(2),
         i(3),
