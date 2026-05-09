@@ -1,7 +1,7 @@
 return {
   -- Code for environment snippet in the above GIF
   s(
-    { trig = "env", snippetType = "autosnippet" },
+    { trig = "bg", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{<>}
