@@ -31,4 +31,15 @@ return {
       d(1, get_visual),
     })
   ),
+  s(
+    {
+      trig = "brr",
+      condition = in_mathzone,
+      snippetType = "autosnippet",
+      dscr = "Expands 'brr' into LaTeX's bar{} command.",
+    },
+    fmta("\\bar{<>}", {
+      d(1, get_visual),
+    })
+  ),
 }

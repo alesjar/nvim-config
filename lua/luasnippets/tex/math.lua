@@ -42,4 +42,5 @@ return {
       d(1, get_visual),
     })
   ),
+  s({ trig = "lra", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\longrightarrow", {})),
 }
