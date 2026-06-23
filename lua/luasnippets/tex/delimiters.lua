@@ -8,11 +8,19 @@ end
 local helpers = require("luasnip-helper-funcs")
 local get_visual = helpers.get_visual
 
+--local conditions = require("luasnip.extras.conditions")
+local conds_expand = require("luasnip.extras.conditions.expand")
+
 return {
   s(
-    { trig = "set", condition = in_mathzone, snippetType = "autosnippet" },
-    fmta("\\left\\{ <> \\right\\}", {
-      i(1),
+    {
+      trig = "st",
+      wordTrig = true,
+      condition = in_mathzone * conds_expand.trigger_not_preceded_by("\\"),
+      snippetType = "autosnippet",
+    },
+    fmta([[\left\{ <> \right\}]], {
+      d(1, get_visual),
     })
   ),
   s(
