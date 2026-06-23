@@ -8,7 +8,8 @@ return {
   -- math blackboard characters
   s({ trig = "bbs", condition = in_mathzone }, fmta("\\mathbb{S}", {})),
   -- math caligraphic characters
-  s({ trig = "calf", condition = in_mathzone }, fmta("\\mathcal{F}", {})),
+  s({ trig = "fcal", condition = in_mathzone }, fmta("\\mathcal{F}", {})),
+  s({ trig = "ccal", condition = in_mathzone }, fmta("\\mathcal{C}", {})),
   -- characters with bar
   s({ trig = "brx", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\bar{x}", {})),
   s({ trig = "br0", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\bar{0}", {})),
@@ -26,6 +27,7 @@ return {
   s({ trig = ";a", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\alpha", {})),
   s({ trig = ";b", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\beta", {})),
   s({ trig = ";t", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\theta", {})),
+  s({ trig = ";f", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\varphi", {})),
   -- tuples
   s({ trig = "xtup", condition = in_mathzone, snippetType = "autosnippet" }, fmta("(x_{1},...,x_{n})", {})),
 }

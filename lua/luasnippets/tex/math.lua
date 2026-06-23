@@ -37,10 +37,16 @@ return {
   ),
   s({ trig = "n-", condition = in_text, snippetType = "autosnippet" }, fmta("$n$-", {})),
   s(
-    { trig = "_", condition = in_mathzone, wordTrig = false, snippetType = "autosnippet" },
+    { trig = "_", condition = in_mathzone, snippetType = "autosnippet" },
     fmta("_{<>}", {
       d(1, get_visual),
     })
   ),
   s({ trig = "lra", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\longrightarrow", {})),
+  s(
+    { trig = "ee", condition = in_mathzone, snippetType = "autosnippet" },
+    fmta("^{<>}", {
+      d(1, get_visual),
+    })
+  ),
 }
