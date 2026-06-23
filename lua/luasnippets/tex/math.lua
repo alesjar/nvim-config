@@ -49,4 +49,6 @@ return {
       d(1, get_visual),
     })
   ),
+  s({ trig = "e1", condition = in_mathzone, snippetType = "autosnippet" }, fmta("^{1}", {})),
+  s({ trig = "inv", condition = in_mathzone, snippetType = "autosnippet" }, fmta("^{-1}", {})),
 }
