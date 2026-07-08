@@ -16,12 +16,12 @@ return {
     )
   ),
   s(
-    { trig = "bef" },
+    { trig = "bfig" },
     fmta(
       [[
         \begin{figure}[h]
           \centering
-          \includegraphics[width=<>\lanewidth]{imagenes/<>}
+          \includegraphics[width=<>\textwidth]{imagenes/<>}
           \label{fig:<>}
         \end{figure}
       ]],
