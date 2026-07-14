@@ -6,7 +6,7 @@ end
 
 return {
   -- math blackboard characters
-  s({ trig = "bbs", condition = in_mathzone }, fmta("\\mathbb{S}", {})),
+  s({ trig = "bbs", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\mathbb{S}", {})),
   -- math caligraphic characters
   s({ trig = "acal", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\mathcal{A}", {})),
   s({ trig = "bcal", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\mathcal{B}", {})),

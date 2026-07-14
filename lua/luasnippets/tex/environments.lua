@@ -33,7 +33,7 @@ return {
     )
   ),
   s(
-    { trig = "befc" },
+    { trig = "bfigc" },
     fmta(
       [[
         \begin{figure}[h]
