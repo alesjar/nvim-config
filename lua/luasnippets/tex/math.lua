@@ -11,7 +11,7 @@ local get_visual = helpers.get_visual
 
 return {
   s(
-    { trig = "ff", condition = in_mathzone, snippetType = "autosnippet" },
+    { trig = "ff", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false },
     fmta("\\frac{<>}{<>}", {
       i(1),
       i(2),
@@ -37,18 +37,64 @@ return {
   ),
   s({ trig = "n-", condition = in_text, snippetType = "autosnippet" }, fmta("$n$-", {})),
   s(
-    { trig = "_", condition = in_mathzone, snippetType = "autosnippet" },
+    { trig = "_", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false },
     fmta("_{<>}", {
       d(1, get_visual),
     })
   ),
   s({ trig = "lra", condition = in_mathzone, snippetType = "autosnippet" }, fmta("\\longrightarrow", {})),
   s(
-    { trig = "ee", condition = in_mathzone, snippetType = "autosnippet" },
+    { trig = "ee", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false },
     fmta("^{<>}", {
       d(1, get_visual),
     })
   ),
-  s({ trig = "e1", condition = in_mathzone, snippetType = "autosnippet" }, fmta("^{1}", {})),
-  s({ trig = "inv", condition = in_mathzone, snippetType = "autosnippet" }, fmta("^{-1}", {})),
+  s({ trig = "e1", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false }, fmta("^{1}", {})),
+  s({ trig = "et", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false }, fmta("^{T}", {})),
+  s({ trig = "inv", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false }, fmta("^{-1}", {})),
+  s(
+    { trig = "([%a][%a]?)vvc", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\vvc{<>}{<>}", {
+      f(function(_, snip)
+        return snip.captures[1]:sub(1, 1)
+      end),
+      f(function(_, snip)
+        return snip.captures[1]:sub(2, 2)
+      end),
+    })
+  ),
+  s(
+    { trig = "([%a][%a]?)hvc", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\hvc{<>}{<>}", {
+      f(function(_, snip)
+        return snip.captures[1]:sub(1, 1)
+      end),
+      f(function(_, snip)
+        return snip.captures[1]:sub(2, 2)
+      end),
+    })
+  ),
+  s(
+    { trig = "lss", snippetType = "autosnippet" },
+    fmta("\\linsys{<>}{<>}{<>}{<>}{<>}", {
+      i(1),
+      i(2),
+      i(3),
+      i(4),
+      i(5),
+    })
+  ),
+  snippetType = "autosnippet",
+  s(
+    {
+      trig = "(%a)(%a)([%a0])(%a?)(%a?)ls",
+      trigEngine = "pattern",
+      snippetType = "autosnippet",
+      wordTrig = true,
+    },
+    f(function(_, snip)
+      local c = snip.captures
+      return ("\\linsys{%s}{%s}{%s}{%s}{%s}"):format(c[1], c[2], c[3], c[4] or "", c[5] or "")
+    end, {})
+  ),
 }

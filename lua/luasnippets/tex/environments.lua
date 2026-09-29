@@ -16,6 +16,32 @@ return {
     )
   ),
   s(
+    { trig = "bq", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{equation}
+          <>
+      \end{equation}
+    ]],
+      {
+        i(1),
+      }
+    )
+  ),
+  s(
+    { trig = "sbq", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{equation*}
+          <>
+      \end{equation*}
+    ]],
+      {
+        i(1),
+      }
+    )
+  ),
+  s(
     { trig = "bfig" },
     fmta(
       [[

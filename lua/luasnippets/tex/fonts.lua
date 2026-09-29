@@ -8,25 +8,41 @@ local get_visual = helpers.get_visual
 return {
   -- Example: italic font implementing visual selection
   s(
-    { trig = "tit", dscr = "Expands 'tii' into LaTeX's textit{} command." },
+    { trig = "tit", snippetType = "autosnippet", dscr = "Expands 'tii' into LaTeX's textit{} command." },
     fmta("\\textit{<>}", {
       d(1, get_visual),
     })
   ),
   s(
-    { trig = "bf", dscr = "Expands 'bf' into LaTeX's textbf{} command." },
+    { trig = "bf", snippetType = "autosnippet", dscr = "Expands 'bf' into LaTeX's textbf{} command." },
     fmta("\\textbf{<>}", {
       d(1, get_visual),
     })
   ),
   s(
-    { trig = "bb", condition = in_mathzone, dscr = "Expands 'bb' into LaTeX's mathbb{} command." },
+    { trig = "pp", snippetType = "autosnippet", dscr = "Expands 'cal' into LaTeX's mathcal{} command." },
+    fmta("\\emph{<>}", {
+      d(1, get_visual),
+    })
+  ),
+  s(
+    {
+      trig = "bb",
+      snippetType = "autosnippet",
+      condition = in_mathzone,
+      dscr = "Expands 'bb' into LaTeX's mathbb{} command.",
+    },
     fmta("\\mathbb{<>}", {
       d(1, get_visual),
     })
   ),
   s(
-    { trig = "cal", condition = in_mathzone, dscr = "Expands 'cal' into LaTeX's mathcal{} command." },
+    {
+      trig = "cal",
+      snippetType = "autosnippet",
+      condition = in_mathzone,
+      dscr = "Expands 'cal' into LaTeX's mathcal{} command.",
+    },
     fmta("\\mathcal{<>}", {
       d(1, get_visual),
     })
