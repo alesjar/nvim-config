@@ -52,49 +52,4 @@ return {
   s({ trig = "e1", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false }, fmta("^{1}", {})),
   s({ trig = "et", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false }, fmta("^{T}", {})),
   s({ trig = "inv", condition = in_mathzone, snippetType = "autosnippet", wordTrig = false }, fmta("^{-1}", {})),
-  s(
-    { trig = "([%a][%a]?)vvc", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\vvc{<>}{<>}", {
-      f(function(_, snip)
-        return snip.captures[1]:sub(1, 1)
-      end),
-      f(function(_, snip)
-        return snip.captures[1]:sub(2, 2)
-      end),
-    })
-  ),
-  s(
-    { trig = "([%a][%a]?)hvc", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\hvc{<>}{<>}", {
-      f(function(_, snip)
-        return snip.captures[1]:sub(1, 1)
-      end),
-      f(function(_, snip)
-        return snip.captures[1]:sub(2, 2)
-      end),
-    })
-  ),
-  s(
-    { trig = "lss", snippetType = "autosnippet" },
-    fmta("\\linsys{<>}{<>}{<>}{<>}{<>}", {
-      i(1),
-      i(2),
-      i(3),
-      i(4),
-      i(5),
-    })
-  ),
-  snippetType = "autosnippet",
-  s(
-    {
-      trig = "(%a)(%a)([%a0])(%a?)(%a?)ls",
-      trigEngine = "pattern",
-      snippetType = "autosnippet",
-      wordTrig = true,
-    },
-    f(function(_, snip)
-      local c = snip.captures
-      return ("\\linsys{%s}{%s}{%s}{%s}{%s}"):format(c[1], c[2], c[3], c[4] or "", c[5] or "")
-    end, {})
-  ),
 }

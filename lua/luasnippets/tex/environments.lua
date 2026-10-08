@@ -29,7 +29,7 @@ return {
     )
   ),
   s(
-    { trig = "sbq", snippetType = "autosnippet" },
+    { trig = "bsq", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{equation*}
